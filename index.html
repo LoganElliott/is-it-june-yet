@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Is it March Yet?</title>
+  <meta name="description" content="Is it March Yet?">
+  <meta name="author" content="Logan Elliott">
+
+</head>
+
+<body>
+  <h1 style="display: flex; justify-content: center; color: #FCDC3B; font-size: 100px"> 
+	  Is it March Yet?
+  </h1>
+  <div id="isItMarchYetCalculation" style="display: flex;  justify-content: center; font-size: 80px; color: red">
+
+  </div>
+  <script>
+	const marchDate = new Date(2018, 2, 1).getTime();
+	let currentDate = new Date().getTime();
+	let isItMarchYetCalculation = marchDate > currentDate ? "NO :(" : "YES :D";
+		
+	document.getElementById("isItMarchYetCalculation").innerHTML = isItMarchYetCalculation;
+  </script>
+</body>
+</html>
