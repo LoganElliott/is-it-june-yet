@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Is it March Yet?</title>
-  <meta name="description" content="Is it March Yet?">
+  <title>Is it June Yet?</title>
+  <meta name="description" content="Is it June Yet?">
   <meta name="author" content="Logan Elliott">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
@@ -50,9 +50,9 @@
 
 <body>
   <h1 style="display: flex; justify-content: center; color: #FCDC3B; font-size: 100px"> 
-	  Is it March Yet?
+	  Is it June Yet?
   </h1>
-  <div id="isItMarchYetCalculation" style="display: flex;  justify-content: center; font-size: 80px; color: red">
+  <div id="isItJuneYetCalculation" style="display: flex;  justify-content: center; font-size: 80px; color: red">
 
   </div>
   <div id="clockdiv">
@@ -75,18 +75,18 @@
 </div>
 
   <script>
-  	const marchDate = new Date(2018, 2, 1).getTime();
+  	const juneDate = new Date(2018, 5, 1).getTime();
   	let currentDate = new Date().getTime();
-  	let isItMarchYetCalculation = marchDate > currentDate ? "NO :(" : "YES :D";
+  	let isItJuneYetCalculation = juneDate > currentDate ? "NO :(" : "YES :D";
   		
-  	document.getElementById("isItMarchYetCalculation").innerHTML = isItMarchYetCalculation;
+  	document.getElementById("isItJuneYetCalculation").innerHTML = isItJuneYetCalculation;
 
     function getTimeRemaining(endtime) {
-      var t = Date.parse(endtime) - Date.parse(new Date());
-      var seconds = Math.floor((t / 1000) % 60);
-      var minutes = Math.floor((t / 1000 / 60) % 60);
-      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+      let t = Date.parse(endtime) - Date.parse(new Date());
+      let seconds = Math.floor((t / 1000) % 60);
+      let minutes = Math.floor((t / 1000 / 60) % 60);
+      let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      let days = Math.floor(t / (1000 * 60 * 60 * 24));
       return {
         'total': t,
         'days': days,
@@ -97,14 +97,14 @@
     }
 
     function initializeClock(id, endtime) {
-      var clock = document.getElementById(id);
-      var daysSpan = clock.querySelector('.days');
-      var hoursSpan = clock.querySelector('.hours');
-      var minutesSpan = clock.querySelector('.minutes');
-      var secondsSpan = clock.querySelector('.seconds');
+      let clock = document.getElementById(id);
+      let daysSpan = clock.querySelector('.days');
+      let hoursSpan = clock.querySelector('.hours');
+      let minutesSpan = clock.querySelector('.minutes');
+      let secondsSpan = clock.querySelector('.seconds');
 
       function updateClock() {
-        var t = getTimeRemaining(endtime);
+        let t = getTimeRemaining(endtime);
 
         daysSpan.innerHTML = t.days;
         hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
@@ -117,10 +117,10 @@
       }
 
       updateClock();
-      var timeinterval = setInterval(updateClock, 1000);
+      let timeinterval = setInterval(updateClock, 1000);
     }
 
-    var deadline = new Date(Date.UTC(2018, 2, 18, 02, 09));
+    let deadline = new Date(Date.UTC(2018, 5, 20, 17, 30));
     initializeClock('clockdiv', deadline);
   </script>
 </body>
